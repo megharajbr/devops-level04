@@ -46,11 +46,15 @@ pipeline {
         }
 
         stage('Disk Monitoring') {
-            steps {
-                sh '''
-                    echo "=== DISK MONITORING ==="
-                    bash scripts/disk_monitor.sh
-                '''
+    steps {
+        sh '''
+            echo "=== DISK MONITORING ==="
+            mkdir -p logs
+            cd scripts
+            bash disk_monitor.sh
+        '''
+    }
+}
             }
         }
 
