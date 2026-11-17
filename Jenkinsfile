@@ -11,11 +11,7 @@ pipeline {
             description: 'Enter Git branch'
         )
 
-        choice(
-            name: 'APP',
-            choices: ['ssh', 'nginx'],
-            description: 'Select app'
-        )
+
     }
 
     stages {
@@ -44,7 +40,7 @@ pipeline {
             steps {
                 sh '''
                     echo "==== HEALTH CHECK ===="
-                    bash scripts/health_check.sh
+                    bash scripts/health_check.sh cron ssh
                 '''
             }
         }
