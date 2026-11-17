@@ -55,8 +55,8 @@ pipeline {
         '''
     }
 }
-            }
-        }
+            
+        
 
         stage('Backup') {
             steps {
