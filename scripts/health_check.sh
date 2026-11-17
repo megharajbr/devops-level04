@@ -4,7 +4,7 @@ LOG_FILE="../logs/health_check.log"
 
 echo "Health Check Started: $(date)" >> "$LOG_FILE"
 
-services=("nginx" "ssh" "cron")
+services=( "ssh" "cron")
 
 for service in "${services[@]}"
 do
