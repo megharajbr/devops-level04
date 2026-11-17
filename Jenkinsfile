@@ -78,7 +78,7 @@ pipeline {
             }
         }
 
-        stage('Archive Reports') {
+                stage('Archive Reports') {
             steps {
                 archiveArtifacts(
                     artifacts: 'backup/*.tar.gz',
