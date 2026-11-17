@@ -36,12 +36,16 @@ pipeline {
             }
         }
 
-        stage('Health Check') {
-            steps {
-                sh '''
-                    echo "==== HEALTH CHECK ===="
-                    bash scripts/health_check.sh
-                '''
+       stage('Health Check') {
+    steps {
+        sh '''
+            echo "==== HEALTH CHECK ===="
+            mkdir -p logs
+            cd scripts
+            bash health_check.sh
+        '''
+    }
+}
             }
         }
 
