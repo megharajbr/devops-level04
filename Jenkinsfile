@@ -10,8 +10,6 @@ pipeline {
             defaultValue: 'main',
             description: 'Enter Git branch'
         )
-
-
     }
 
     stages {
@@ -36,16 +34,14 @@ pipeline {
             }
         }
 
-       stage('Health Check') {
-    steps {
-        sh '''
-            echo "==== HEALTH CHECK ===="
-            mkdir -p logs
-            cd scripts
-            bash health_check.sh
-        '''
-    }
-}
+        stage('Health Check') {
+            steps {
+                sh '''
+                    echo "==== HEALTH CHECK ===="
+                    mkdir -p logs
+                    cd scripts
+                    bash health_check.sh
+                '''
             }
         }
 
@@ -78,7 +74,7 @@ pipeline {
             }
         }
 
-                stage('Archive Reports') {
+        stage('Archive Reports') {
             steps {
                 archiveArtifacts(
                     artifacts: 'backup/*.tar.gz',
