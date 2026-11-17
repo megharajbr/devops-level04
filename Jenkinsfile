@@ -40,7 +40,7 @@ pipeline {
             steps {
                 sh '''
                     echo "==== HEALTH CHECK ===="
-                    bash scripts/health_check.sh cron ssh
+                    bash scripts/health_check.sh
                 '''
             }
         }
