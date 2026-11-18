@@ -10,6 +10,11 @@ pipeline {
             defaultValue: 'main',
             description: 'Enter Git branch'
         )
+           choice(
+        name: 'APP',
+        choices: ['ssh', 'nginx' , 'cron'],
+        description: 'Select application'
+    )
     }
 
     stages {
