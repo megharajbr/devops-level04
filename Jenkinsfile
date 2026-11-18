@@ -90,6 +90,10 @@ pipeline {
             else if (params.APP == 'nginx') {
                 echo 'Selected application: NGINX'
                 sh 'sudo systemctl status nginx --no-pager'
+                 }
+            else if (params.APP == 'cron') {
+                echo 'Selected application: CRON'
+                sh 'sudo systemctl status cron --no-pager'
             }
         }
     }
