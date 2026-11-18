@@ -1,10 +1,14 @@
+
 #!/bin/bash
 
-LOG_FILE="/logs/health_check.log"
+PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+LOG_FILE="$PROJECT_DIR/logs/health_check.log"
+
+mkdir -p "$PROJECT_DIR/logs"
 
 echo "Health Check Started: $(date)" >> "$LOG_FILE"
 
-services=( "ssh" "cron")
+services=("ssh" "cron")
 
 for service in "${services[@]}"
 do
