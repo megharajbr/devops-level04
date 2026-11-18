@@ -75,6 +75,20 @@ pipeline {
                 '''
             }
         }
+        stage('Application Selection') {
+    steps {
+        script {
+            if (params.APP == 'ssh') {
+                echo 'Selected application: SSH'
+                sh 'sudo systemctl status ssh --no-pager'
+            }
+            else if (params.APP == 'nginx') {
+                echo 'Selected application: NGINX'
+                sh 'sudo systemctl status nginx --no-pager'
+            }
+        }
+    }
+}
 
         stage('Archive Reports') {
             steps {
