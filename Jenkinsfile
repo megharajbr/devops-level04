@@ -78,9 +78,10 @@ pipeline {
 
         stage('Archive Reports') {
             steps {
-                archiveArtifacts(
-                    artifacts: 'backup/*.tar.gz',
-                    allowEmptyArchive: true
+               archiveArtifacts(
+    artifacts: 'backup/*.tar.gz',
+    allowEmptyArchive: true
+)
                 )
             }
         }
