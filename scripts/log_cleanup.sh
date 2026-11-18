@@ -1,7 +1,7 @@
 #!/bin/bash
 
-LOG_DIR="../logs"
-BACKUP_DIR="../backup"
+LOG_DIR="/logs"
+BACKUP_DIR="/backup"
 
 mkdir -p "$BACKUP_DIR"
 
