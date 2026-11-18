@@ -35,23 +35,21 @@ pipeline {
         }
 
         stage('Health Check') {
-            steps {
-                sh '''
-                    echo "==== HEALTH CHECK ===="
-                    mkdir -p logs
-                    cd scripts
-                    bash health_check.sh
-                '''
-            }
-        }
+    steps {
+        sh '''
+            echo "==== HEALTH CHECK ===="
+            mkdir -p logs
+            bash scripts/health_check.sh
+        '''
+    }
+}
 
         stage('Disk Monitoring') {
     steps {
         sh '''
             echo "=== DISK MONITORING ==="
             mkdir -p logs
-            cd scripts
-            bash disk_monitor.sh
+            bash scripts/disk_monitor.sh
         '''
     }
 }
