@@ -1,7 +1,7 @@
 #!/bin/bash
 
 THRESHOLD=80
-LOG_FILE="../logs/disk_monitor.log"
+LOG_FILE="/logs/disk_monitor.log"
 
 USAGE=$(df / | awk 'NR==2 {print $5}' | tr -d '%')
 
