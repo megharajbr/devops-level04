@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LOG_FILE="../logs/health_check.log"
+LOG_FILE="/logs/health_check.log"
 
 echo "Health Check Started: $(date)" >> "$LOG_FILE"
 
