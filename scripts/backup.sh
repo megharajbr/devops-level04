@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SOURCE="../app"
-DEST="../backup"
+SOURCE="/app"
+DEST="/backup"
 
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 BACKUP_FILE="$DEST/app_backup_$TIMESTAMP.tar.gz"
