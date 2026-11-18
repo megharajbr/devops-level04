@@ -1,7 +1,12 @@
+
 #!/bin/bash
 
+PROJECT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+
 THRESHOLD=80
-LOG_FILE="/logs/disk_monitor.log"
+LOG_FILE="$PROJECT_DIR/logs/disk_monitor.log"
+
+mkdir -p "$PROJECT_DIR/logs"
 
 USAGE=$(df / | awk 'NR==2 {print $5}' | tr -d '%')
 
