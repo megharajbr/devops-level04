@@ -82,8 +82,8 @@ pipeline {
     artifacts: 'backup/*.tar.gz',
     allowEmptyArchive: true
 )
-                )
+            }
             }
         }
     }
-}
+
